@@ -1,0 +1,239 @@
+\hypertarget{from__yaml_8cpp}{}\doxysection{task/from\+\_\+yaml.cpp File Reference}
+\label{from__yaml_8cpp}\index{task/from\_yaml.cpp@{task/from\_yaml.cpp}}
+
+
+Second part of task (from YAML string to vector)  
+
+
+{\ttfamily \#include \char`\"{}from\+\_\+yaml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}to\+\_\+yaml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for from\+\_\+yaml.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{from__yaml_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{from__yaml_8cpp_a0f0f5a68026ad32f411e27972e2158b2}{line\+\_\+to\+\_\+int}} (std\+::string\+\_\+view line)
+\begin{DoxyCompactList}\small\item\em Transfroms line of yaml string (not first) to element of int vector. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{from__yaml_8cpp_ac39f564d47e8e835342036b6316416aa}{from\+\_\+yaml}} (const char $\ast$input)
+\begin{DoxyCompactList}\small\item\em Overloading of from yaml function for null-\/terminated strings. Basically calls overloading of itself for c++ strings. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{from__yaml_8cpp_a4bbb35c71d0a0b686e1d301a301fc156}{from\+\_\+yaml}} (const char $\ast$input, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Overloading of from yaml function for char arrays. Basically calls overloading of itself for c++ strings. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{from__yaml_8cpp_a90225359e750eb1cd3e12c38cc85992f}{from\+\_\+yaml}} (std\+::string\+\_\+view input)
+\begin{DoxyCompactList}\small\item\em Overloading of from yaml function for c++ strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Second part of task (from YAML string to vector) 
+
+\begin{DoxyAuthor}{Author}
+Vladimir Docenko 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/09-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{from__yaml_8cpp_ac39f564d47e8e835342036b6316416aa}\label{from__yaml_8cpp_ac39f564d47e8e835342036b6316416aa}} 
+\index{from\_yaml.cpp@{from\_yaml.cpp}!from\_yaml@{from\_yaml}}
+\index{from\_yaml@{from\_yaml}!from\_yaml.cpp@{from\_yaml.cpp}}
+\doxysubsubsection{\texorpdfstring{from\_yaml()}{from\_yaml()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ from\+\_\+yaml (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input }\end{DoxyParamCaption})}
+
+
+
+Overloading of from yaml function for null-\/terminated strings. Basically calls overloading of itself for c++ strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & null-\/terminated c-\/string, YAML sequence string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ integers from YAML string 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & if input is not in YAML format \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 62 of file from\+\_\+yaml.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62                                            \{}
+\DoxyCodeLine{63     \textcolor{keywordflow}{return} \mbox{\hyperlink{from__yaml_8cpp_ac39f564d47e8e835342036b6316416aa}{from\_yaml}}(std::string\_view(input));}
+\DoxyCodeLine{64 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{from__yaml_8cpp_a4bbb35c71d0a0b686e1d301a301fc156}\label{from__yaml_8cpp_a4bbb35c71d0a0b686e1d301a301fc156}} 
+\index{from\_yaml.cpp@{from\_yaml.cpp}!from\_yaml@{from\_yaml}}
+\index{from\_yaml@{from\_yaml}!from\_yaml.cpp@{from\_yaml.cpp}}
+\doxysubsubsection{\texorpdfstring{from\_yaml()}{from\_yaml()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ from\+\_\+yaml (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Overloading of from yaml function for char arrays. Basically calls overloading of itself for c++ strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & char array, YAML sequence string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ integers from YAML string 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & if input is not in YAML format \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 73 of file from\+\_\+yaml.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73                                                         \{}
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} \mbox{\hyperlink{from__yaml_8cpp_ac39f564d47e8e835342036b6316416aa}{from\_yaml}}(std::string\_view(input, size));}
+\DoxyCodeLine{75 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{from__yaml_8cpp_a90225359e750eb1cd3e12c38cc85992f}\label{from__yaml_8cpp_a90225359e750eb1cd3e12c38cc85992f}} 
+\index{from\_yaml.cpp@{from\_yaml.cpp}!from\_yaml@{from\_yaml}}
+\index{from\_yaml@{from\_yaml}!from\_yaml.cpp@{from\_yaml.cpp}}
+\doxysubsubsection{\texorpdfstring{from\_yaml()}{from\_yaml()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ from\+\_\+yaml (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{input }\end{DoxyParamCaption})}
+
+
+
+Overloading of from yaml function for c++ strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & std\+::string\+\_\+view, YAML sequence string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ integers from YAML string 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & if input is not in YAML format \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 84 of file from\+\_\+yaml.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84                                               \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} (input.find(\textcolor{stringliteral}{"{}\(\backslash\)t"{}}) != std::string::npos)}
+\DoxyCodeLine{86         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Tabs are forbidden in YAML"{}});}
+\DoxyCodeLine{87     std::vector<int> ans;}
+\DoxyCodeLine{88     std::size\_t index = input.find(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{89     std::size\_t cursor = index;}
+\DoxyCodeLine{90     std::string\_view line = input.substr(0, cursor);}
+\DoxyCodeLine{91     \textcolor{keywordflow}{if} ((index == std::string::npos) and (input.find(\textcolor{stringliteral}{"{}null"{}}) == std::string::npos))}
+\DoxyCodeLine{92         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}No null in empty sequence"{}});}
+\DoxyCodeLine{93     \textcolor{keywordflow}{if} ((index != std::string::npos) and (line.back() != \textcolor{charliteral}{':'}))}
+\DoxyCodeLine{94         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Not YAML format: letters after \(\backslash\)"{}:\(\backslash\)"{}"{}});}
+\DoxyCodeLine{95     index = line.find(\textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{96     \textcolor{keywordflow}{if} (index == std::string::npos)}
+\DoxyCodeLine{97         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Wrong string format. (no \(\backslash\)"{}:\(\backslash\)"{})"{}});}
+\DoxyCodeLine{98     std::string\_view name = line.substr(0, index);}
+\DoxyCodeLine{99     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{to__yaml_8cpp_a7e252335b413c727c993a9ffba44c71a}{check\_format}}(name))\{}
+\DoxyCodeLine{100         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Name is not in YAML format"{}});}
+\DoxyCodeLine{101     \}}
+\DoxyCodeLine{102     \textcolor{keywordflow}{while} (\textcolor{keyword}{true})\{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{if} ((cursor == std::string::npos) or (input[cursor] == input.back()))}
+\DoxyCodeLine{104             \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{105         input.remove\_prefix(cursor+1);}
+\DoxyCodeLine{106         cursor = input.find(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{107         line = input.substr(0, cursor);}
+\DoxyCodeLine{108         index = line.find\_first\_not\_of(\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{109         \textcolor{keywordflow}{if} ((line.front() != \textcolor{charliteral}{' '}) or (index == std::string::npos) or(line[index] != \textcolor{charliteral}{'-\/'}))}
+\DoxyCodeLine{110             \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}One of the lines is not in YAML format (space or -\/)"{}});}
+\DoxyCodeLine{111         ans.push\_back(\mbox{\hyperlink{from__yaml_8cpp_a0f0f5a68026ad32f411e27972e2158b2}{line\_to\_int}}(line));}
+\DoxyCodeLine{112     \}}
+\DoxyCodeLine{113 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{from__yaml_8cpp_a0f0f5a68026ad32f411e27972e2158b2}\label{from__yaml_8cpp_a0f0f5a68026ad32f411e27972e2158b2}} 
+\index{from\_yaml.cpp@{from\_yaml.cpp}!line\_to\_int@{line\_to\_int}}
+\index{line\_to\_int@{line\_to\_int}!from\_yaml.cpp@{from\_yaml.cpp}}
+\doxysubsubsection{\texorpdfstring{line\_to\_int()}{line\_to\_int()}}
+{\footnotesize\ttfamily int line\+\_\+to\+\_\+int (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{line }\end{DoxyParamCaption})}
+
+
+
+Transfroms line of yaml string (not first) to element of int vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & representation one line (not first) of the YAML string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int element of int vector 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & if line not in YAML format or if there\textquotesingle{}s no integer in line \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 26 of file from\+\_\+yaml.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26                                     \{}
+\DoxyCodeLine{27     line = line.substr(0, line.find\_last\_not\_of(\textcolor{stringliteral}{"{} "{}})+1);}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} ans=0;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{short} multiply = 1;}
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} no\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{31     \textcolor{keyword}{auto} curr = line.begin();}
+\DoxyCodeLine{32     \textcolor{keywordflow}{while} (*curr == \textcolor{charliteral}{' '})\{}
+\DoxyCodeLine{33         curr ++;}
+\DoxyCodeLine{34         \textcolor{keywordflow}{if} (*curr == \textcolor{charliteral}{'-\/'})\{}
+\DoxyCodeLine{35             \textcolor{keywordflow}{if} (no\_minus) no\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{36             \textcolor{keywordflow}{else} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{37             curr++;}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39         \textcolor{keywordflow}{if} (curr == line.end())}
+\DoxyCodeLine{40             \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Empty value in one of lines"{}});}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42     \textcolor{keywordflow}{if} (*curr == \textcolor{charliteral}{'-\/'})\{}
+\DoxyCodeLine{43         multiply = -\/1;}
+\DoxyCodeLine{44         curr ++;}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46     \textcolor{keywordflow}{for} (curr; curr != line.end(); curr++)\{}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} (!std::isdigit(*curr))}
+\DoxyCodeLine{48             \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Integer format error"{}});}
+\DoxyCodeLine{49         ans *= 10;}
+\DoxyCodeLine{50         ans += (multiply)*(*curr -\/ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}

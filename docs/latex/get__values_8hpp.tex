@@ -1,0 +1,147 @@
+\hypertarget{get__values_8hpp}{}\doxysection{dialog/get\+\_\+values.hpp File Reference}
+\label{get__values_8hpp}\index{dialog/get\_values.hpp@{dialog/get\_values.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+Include dependency graph for get\+\_\+values.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{get__values_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{get__values_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{get__values_8cpp_a329224b93c6f754375655693cb961411}{get\+\_\+values\+::get\+\_\+menu\+\_\+opt}} (std\+::istream \&input, std\+::ostream \&output)
+\begin{DoxyCompactList}\small\item\em Get the menu opt functtion. For getting exactly 1 char for choosing menu option. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{get__values_8hpp_afb7b625def79d20b2532823f61faa4cf}{get\+\_\+values\+::get\+\_\+num}} (std\+::istream \&input, std\+::ostream \&output, T min=std\+::numeric\+\_\+limits$<$ T $>$\+::lowest(), T max=std\+::numeric\+\_\+limits$<$ T $>$\+::max())
+\begin{DoxyCompactList}\small\item\em Template function to get int/double/ll/etx. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+VLadimir Docenko 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/09-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{get__values_8cpp_a329224b93c6f754375655693cb961411}\label{get__values_8cpp_a329224b93c6f754375655693cb961411}} 
+\index{get\_values.hpp@{get\_values.hpp}!get\_menu\_opt@{get\_menu\_opt}}
+\index{get\_menu\_opt@{get\_menu\_opt}!get\_values.hpp@{get\_values.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_menu\_opt()}{get\_menu\_opt()}}
+{\footnotesize\ttfamily char get\+\_\+values\+::get\+\_\+menu\+\_\+opt (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input,  }\item[{std\+::ostream \&}]{output }\end{DoxyParamCaption})}
+
+
+
+Get the menu opt functtion. For getting exactly 1 char for choosing menu option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & stream (for wider usage and comfortable testing) \\
+\hline
+{\em output} & stream (for wider usage and comfortable testing) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char (menu option) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & when invalid stream or EOF found \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 30 of file get\+\_\+values.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                                                             \{}
+\DoxyCodeLine{31         \textcolor{keywordtype}{char} buk;}
+\DoxyCodeLine{32         input.get(buk);}
+\DoxyCodeLine{33         \textcolor{keywordflow}{while} (!(input.good()) || (input.get() != \textcolor{charliteral}{'\(\backslash\)n'}))\{}
+\DoxyCodeLine{34             \textcolor{keywordflow}{if} (input.bad())}
+\DoxyCodeLine{35                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Failed. Probably wrong stream"{}});}
+\DoxyCodeLine{36             \textcolor{keywordflow}{if} (input.eof())}
+\DoxyCodeLine{37                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}EOF detected"{}});}
+\DoxyCodeLine{38             input.ignore(std::numeric\_limits<std::streamsize>::max(), \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{39             input.clear();}
+\DoxyCodeLine{40             output << \textcolor{stringliteral}{"{}Please, try again: "{}};}
+\DoxyCodeLine{41             input.get(buk);}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43         \textcolor{keywordflow}{return} buk;}
+\DoxyCodeLine{44     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{get__values_8hpp_afb7b625def79d20b2532823f61faa4cf}\label{get__values_8hpp_afb7b625def79d20b2532823f61faa4cf}} 
+\index{get\_values.hpp@{get\_values.hpp}!get\_num@{get\_num}}
+\index{get\_num@{get\_num}!get\_values.hpp@{get\_values.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_num()}{get\_num()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T get\+\_\+values\+::get\+\_\+num (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input,  }\item[{std\+::ostream \&}]{output,  }\item[{T}]{min = {\ttfamily std\+:\+:numeric\+\_\+limits$<$T$>$\+:\+:lowest()},  }\item[{T}]{max = {\ttfamily std\+:\+:numeric\+\_\+limits$<$T$>$\+:\+:max()} }\end{DoxyParamCaption})}
+
+
+
+Template function to get int/double/ll/etx. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em input} & stream (for wider usage and comfortable testing) \\
+\hline
+{\em output} & stream (for wider usage and comfortable testing) \\
+\hline
+{\em min} & value of template object \\
+\hline
+{\em max} & value of template object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T num object 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file get\+\_\+values.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31                                                   \{}
+\DoxyCodeLine{32         T a;}
+\DoxyCodeLine{33         \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{34             input >> a;}
+\DoxyCodeLine{35             \textcolor{keywordflow}{if}(input.eof())}
+\DoxyCodeLine{36                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Failed to read number: EOF"{}});}
+\DoxyCodeLine{37             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(input.bad())}
+\DoxyCodeLine{38                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Failed to read number"{}});}
+\DoxyCodeLine{39             \textcolor{comment}{// прочие ошибки (неправильный формат ввода) либо число не входит в заданный диапазон}}
+\DoxyCodeLine{40             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(input.fail() || a < min || a > max || (input.get() != \textcolor{charliteral}{'\(\backslash\)n'})) \{}
+\DoxyCodeLine{41                 input.clear();}
+\DoxyCodeLine{42                 input.ignore(std::numeric\_limits<std::streamsize>::max(), \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{43                 output << \textcolor{stringliteral}{"{}Wrong data format; Try again: "{}};}
+\DoxyCodeLine{44             \}}
+\DoxyCodeLine{45             \textcolor{keywordflow}{else} \textcolor{comment}{// успешный ввод}}
+\DoxyCodeLine{46                 \textcolor{keywordflow}{return} a;}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48     \}}
+
+\end{DoxyCode}

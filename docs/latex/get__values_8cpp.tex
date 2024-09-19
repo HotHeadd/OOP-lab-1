@@ -1,0 +1,86 @@
+\hypertarget{get__values_8cpp}{}\doxysection{dialog/get\+\_\+values.cpp File Reference}
+\label{get__values_8cpp}\index{dialog/get\_values.cpp@{dialog/get\_values.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include \char`\"{}get\+\_\+values.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../task/to\+\_\+yaml.\+hpp\char`\"{}}\newline
+Include dependency graph for get\+\_\+values.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{get__values_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{get__values_8cpp_a329224b93c6f754375655693cb961411}{get\+\_\+values\+::get\+\_\+menu\+\_\+opt}} (std\+::istream \&input, std\+::ostream \&output)
+\begin{DoxyCompactList}\small\item\em Get the menu opt functtion. For getting exactly 1 char for choosing menu option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Vladimir Docenko 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/09-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{get__values_8cpp_a329224b93c6f754375655693cb961411}\label{get__values_8cpp_a329224b93c6f754375655693cb961411}} 
+\index{get\_values.cpp@{get\_values.cpp}!get\_menu\_opt@{get\_menu\_opt}}
+\index{get\_menu\_opt@{get\_menu\_opt}!get\_values.cpp@{get\_values.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_menu\_opt()}{get\_menu\_opt()}}
+{\footnotesize\ttfamily char get\+\_\+values\+::get\+\_\+menu\+\_\+opt (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input,  }\item[{std\+::ostream \&}]{output }\end{DoxyParamCaption})}
+
+
+
+Get the menu opt functtion. For getting exactly 1 char for choosing menu option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & stream (for wider usage and comfortable testing) \\
+\hline
+{\em output} & stream (for wider usage and comfortable testing) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char (menu option) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & when invalid stream or EOF found \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 30 of file get\+\_\+values.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                                                             \{}
+\DoxyCodeLine{31         \textcolor{keywordtype}{char} buk;}
+\DoxyCodeLine{32         input.get(buk);}
+\DoxyCodeLine{33         \textcolor{keywordflow}{while} (!(input.good()) || (input.get() != \textcolor{charliteral}{'\(\backslash\)n'}))\{}
+\DoxyCodeLine{34             \textcolor{keywordflow}{if} (input.bad())}
+\DoxyCodeLine{35                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Failed. Probably wrong stream"{}});}
+\DoxyCodeLine{36             \textcolor{keywordflow}{if} (input.eof())}
+\DoxyCodeLine{37                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}EOF detected"{}});}
+\DoxyCodeLine{38             input.ignore(std::numeric\_limits<std::streamsize>::max(), \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{39             input.clear();}
+\DoxyCodeLine{40             output << \textcolor{stringliteral}{"{}Please, try again: "{}};}
+\DoxyCodeLine{41             input.get(buk);}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43         \textcolor{keywordflow}{return} buk;}
+\DoxyCodeLine{44     \}}
+
+\end{DoxyCode}

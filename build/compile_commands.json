@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/wstt/working/oop/1/build",
+  "command": "/usr/bin/c++  -I/home/wstt/working/oop/1/dialog -I/home/wstt/working/oop/1/task -g -std=gnu++20 -o CMakeFiles/run.dir/run.cpp.o -c /home/wstt/working/oop/1/run.cpp",
+  "file": "/home/wstt/working/oop/1/run.cpp"
+},
+{
+  "directory": "/home/wstt/working/oop/1/build/dialog",
+  "command": "/usr/bin/c++  -I/home/wstt/working/oop/1/dialog -I/home/wstt/working/oop/1/task -g -std=gnu++20 -o CMakeFiles/dialog.dir/dialogs.cpp.o -c /home/wstt/working/oop/1/dialog/dialogs.cpp",
+  "file": "/home/wstt/working/oop/1/dialog/dialogs.cpp"
+},
+{
+  "directory": "/home/wstt/working/oop/1/build/dialog",
+  "command": "/usr/bin/c++  -I/home/wstt/working/oop/1/dialog -I/home/wstt/working/oop/1/task -g -std=gnu++20 -o CMakeFiles/dialog.dir/get_values.cpp.o -c /home/wstt/working/oop/1/dialog/get_values.cpp",
+  "file": "/home/wstt/working/oop/1/dialog/get_values.cpp"
+},
+{
+  "directory": "/home/wstt/working/oop/1/build/task",
+  "command": "/usr/bin/c++  -I/home/wstt/working/oop/1/dialog -I/home/wstt/working/oop/1/task -g -std=gnu++20 -o CMakeFiles/task.dir/from_yaml.cpp.o -c /home/wstt/working/oop/1/task/from_yaml.cpp",
+  "file": "/home/wstt/working/oop/1/task/from_yaml.cpp"
+},
+{
+  "directory": "/home/wstt/working/oop/1/build/task",
+  "command": "/usr/bin/c++  -I/home/wstt/working/oop/1/dialog -I/home/wstt/working/oop/1/task -g -std=gnu++20 -o CMakeFiles/task.dir/to_yaml.cpp.o -c /home/wstt/working/oop/1/task/to_yaml.cpp",
+  "file": "/home/wstt/working/oop/1/task/to_yaml.cpp"
+}
+]

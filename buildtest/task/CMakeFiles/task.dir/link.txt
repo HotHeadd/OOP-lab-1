@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtask.a CMakeFiles/task.dir/from_yaml.cpp.o CMakeFiles/task.dir/to_yaml.cpp.o
+/usr/bin/ranlib libtask.a

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/run.dir/run.cpp.o -o run  dialog/libdialog.a task/libtask.a 
