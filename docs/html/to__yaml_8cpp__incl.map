@@ -1,9 +1,0 @@
-<map id="task/to_yaml.cpp" name="task/to_yaml.cpp">
-<area shape="rect" id="node1" title="Fist part of task (from vector + name to YAML format string)" alt="" coords="141,5,275,32"/>
-<area shape="rect" id="node2" href="$to__yaml_8hpp_source.html" title=" " alt="" coords="27,80,130,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,64,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="90,155,153,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="206,80,293,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="317,80,403,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="427,80,493,107"/>
-</map>

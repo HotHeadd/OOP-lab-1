@@ -1,1 +1,0 @@
-/usr/bin/c++  -lgtest -lgmock -pthread CMakeFiles/test.dir/runtests.cpp.o CMakeFiles/test.dir/test_from.cpp.o CMakeFiles/test.dir/test_to.cpp.o CMakeFiles/test.dir/test_dialogs.cpp.o -o test  -lgcov task/libtask.a dialog/libdialog.a -lgtest -lgcov 

@@ -1,9 +1,0 @@
-/home/wstt/working/oop/1/buildtest/CMakeFiles/test.dir
-/home/wstt/working/oop/1/buildtest/CMakeFiles/edit_cache.dir
-/home/wstt/working/oop/1/buildtest/CMakeFiles/rebuild_cache.dir
-/home/wstt/working/oop/1/buildtest/task/CMakeFiles/task.dir
-/home/wstt/working/oop/1/buildtest/task/CMakeFiles/edit_cache.dir
-/home/wstt/working/oop/1/buildtest/task/CMakeFiles/rebuild_cache.dir
-/home/wstt/working/oop/1/buildtest/dialog/CMakeFiles/dialog.dir
-/home/wstt/working/oop/1/buildtest/dialog/CMakeFiles/edit_cache.dir
-/home/wstt/working/oop/1/buildtest/dialog/CMakeFiles/rebuild_cache.dir
